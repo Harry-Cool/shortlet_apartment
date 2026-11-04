@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Luxury Short-Let Apartments | Book Per Night</title>
+  <meta name="description" content="Fully furnished 1, 2 and 3 bedroom short-let apartments. Book per night and confirm directly on WhatsApp.">
+  <meta name="theme-color" content="#0a0a0f">
+  <meta property="og:title" content="Luxury Short-Let Apartments">
+  <meta property="og:description" content="Fully furnished 1, 2 and 3 bedroom apartments. Book per night via WhatsApp.">
+  <meta property="og:image" content="images/living-1.jpg">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Intro curtain (pure CSS, lifts away on load) -->
+<div class="curtain" aria-hidden="true">
+  <div class="curtain-panel top"></div>
+  <div class="curtain-panel bottom"></div>
+  <div class="curtain-logo"><span data-name>Your Apartments</span></div>
+</div>
+
+<header class="nav" id="nav">
+  <a href="#top" class="brand" data-name>Your Apartments</a>
+  <nav>
+    <a href="#apartments">Apartments</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#amenities">Amenities</a>
+    <a href="#book" class="nav-cta">Book now</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="slides" aria-hidden="true">
+      <img class="slide s1" src="images/living-1.jpg" alt="">
+      <img class="slide s2" src="images/living-2.jpg" alt="">
+      <img class="slide s3" src="images/bedroom-2.jpg" alt="">
+      <img class="slide s4" src="images/living-3.jpg" alt="">
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="orb o1"></div>
+    <div class="orb o2"></div>
+
+    <div class="hero-inner">
+      <p class="eyebrow reveal" style="--d:1.9s" data-location>Lagos, Nigeria</p>
+      <h1>
+        <span class="mask"><span class="word" style="--d:2.0s">Stay</span></span>
+        <span class="mask"><span class="word" style="--d:2.12s">in</span></span>
+        <span class="mask"><span class="word accent" style="--d:2.24s">style.</span></span><br>
+        <span class="mask"><span class="word" style="--d:2.4s">Book</span></span>
+        <span class="mask"><span class="word" style="--d:2.52s">in</span></span>
+        <span class="mask"><span class="word" style="--d:2.64s">minutes.</span></span>
+      </h1>
+      <p class="lead reveal" style="--d:2.9s">Beautifully furnished 1, 2 and 3 bedroom apartments. Pick your apartment, choose your nights and confirm directly with the owner on WhatsApp.</p>
+      <div class="cta-row reveal" style="--d:3.1s">
+        <a href="#book" class="btn btn-primary">Book your stay</a>
+        <a href="#" class="btn btn-outline" data-wa>Chat on WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="scroll-hint" aria-hidden="true"><span></span></div>
+    <div class="hero-cut"></div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <section class="strip">
+    <div><strong>7</strong><span>apartments</span></div>
+    <div><strong>Per night</strong><span>flexible booking</span></div>
+    <div><strong>24/7</strong><span>power &amp; security</span></div>
+    <div><strong>Direct</strong><span>no middlemen</span></div>
+  </section>
+
+  <!-- APARTMENT TYPES -->
+  <section id="apartments" class="section">
+    <p class="kicker">Our apartments</p>
+    <h2>Choose the space that fits you</h2>
+    <div class="types" id="typeCards"></div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="section">
+    <p class="kicker">Gallery</p>
+    <h2>Take a look inside</h2>
+    <div class="gallery" id="galleryGrid"></div>
+  </section>
+
+  <!-- AMENITIES -->
+  <section id="amenities" class="section dark-band">
+    <p class="kicker">Amenities</p>
+    <h2>Everything you need, included</h2>
+    <div class="amenities" id="amenityList"></div>
+  </section>
+
+  <!-- BOOKING -->
+  <section id="book" class="section book">
+    <div class="book-intro">
+      <p class="kicker">Reserve</p>
+      <h2>Book your stay</h2>
+      <p>Choose your apartment and number of nights. We'll build your message and open WhatsApp so you can send it straight to the owner.</p>
+      <ul class="rules">
+        <li><b>Check-in</b> <span data-checkin>2:00 PM</span></li>
+        <li><b>Check-out</b> <span data-checkout>12:00 PM</span></li>
+        <li><b>Caution fee</b> <span><span data-caution>₦50,000</span> (refundable)</span></li>
+        <li><b>Billing</b> per night</li>
+      </ul>
+    </div>
+
+    <form id="bookingForm" class="form" novalidate>
+      <div class="field">
+        <label for="name">Full name</label>
+        <input id="name" type="text" autocomplete="name" placeholder="Your name" required>
+      </div>
+
+      <fieldset class="field">
+        <legend>Apartment type</legend>
+        <div class="choice" id="typeChoice"></div>
+      </fieldset>
+
+      <div class="row">
+        <div class="field">
+          <label for="checkin">Check-in date</label>
+          <input id="checkin" type="date" required>
+        </div>
+        <div class="field">
+          <label for="nights">Number of nights</label>
+          <div class="stepper">
+            <button type="button" id="minus" aria-label="Fewer nights">−</button>
+            <input id="nights" type="number" min="1" max="60" value="1" inputmode="numeric">
+            <button type="button" id="plus" aria-label="More nights">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label for="units">Apartments needed</label>
+          <select id="units"></select>
+        </div>
+        <div class="field">
+          <label for="guests">Guests</label>
+          <select id="guests"></select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="notes">Special requests (optional)</label>
+        <textarea id="notes" rows="2" placeholder="Early check-in, airport pickup, etc."></textarea>
+      </div>
+
+      <div class="summary" id="summary">
+        <div class="line"><span id="sRate">Select an apartment</span><strong id="sStay">₦0</strong></div>
+        <div class="line"><span>Caution fee (refundable)</span><strong id="sCaution">₦0</strong></div>
+        <div class="line"><span id="sDates">Pick a check-in date</span><span></span></div>
+        <div class="line total"><span>Total to confirm</span><strong id="sTotal">₦0</strong></div>
+      </div>
+
+      <p class="error" id="formError" role="alert" hidden></p>
+      <button type="submit" class="btn btn-primary btn-wide">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Send booking on WhatsApp
+      </button>
+      <p class="small">Sending this does not confirm your booking. The owner will reply to confirm availability and payment details.</p>
+    </form>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section contact">
+    <h2>Questions? Talk to the owner</h2>
+    <p>Quick replies on WhatsApp.</p>
+    <a href="#" class="btn btn-primary" data-wa>Message on WhatsApp</a>
+    <p class="small" data-address>Full address shared after booking confirmation.</p>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>© <span id="year"></span> <span data-name>Your Apartments</span>. All rights reserved.</p>
+</footer>
+
+<a href="#" class="wa-float" data-wa aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lb-close" aria-label="Close">×</button>
+  <img id="lbImg" alt="">
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
